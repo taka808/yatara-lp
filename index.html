@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow"><!-- v1プレビュー。本公開時にHASHIRA承認の上で除去 -->
+<meta name="robots" content="noindex, nofollow"><!-- v2プレビュー。本公開時にHASHIRA承認の上で除去 -->
 <title>YATARA / 夜打楽 — 新しいジャンルの設計図</title>
-<meta name="description" content="盆踊りのリズム構造を土台に、現代の音楽システムを載せて生まれる新ジャンル YATARA / 夜打楽。構造・実験・仮説をすべて公開する設計図。">
+<meta name="description" content="盆踊りのリズム構造を土台に、現代の音楽システムを載せて生まれる新ジャンル YATARA / 夜打楽。全フォーマットの小節設計・リズム・メロディ・ハーモニーの取り決めを公開する設計図。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -23,13 +23,9 @@
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    background:var(--bg);
-    color:var(--ink);
+    background:var(--bg);color:var(--ink);
     font-family:'Noto Sans JP','Poppins',sans-serif;
-    font-weight:300;
-    line-height:1.8;
-    letter-spacing:.04em;
-    overflow-x:hidden;
+    font-weight:300;line-height:1.8;letter-spacing:.04em;overflow-x:hidden;
   }
   /* グレイン（背景の質感） */
   body::before{
@@ -40,71 +36,50 @@
   a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)}
   a:hover{border-bottom-color:var(--red)}
 
-  section{padding:clamp(56px,10vh,120px) var(--gutter);max-width:980px;margin:0 auto}
-  .kicker{
-    font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.34em;
-    text-transform:lowercase;color:var(--red);margin-bottom:14px;font-weight:500;
-  }
+  section{padding:clamp(56px,10vh,110px) var(--gutter);max-width:980px;margin:0 auto}
+  .kicker{font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.34em;
+          text-transform:lowercase;color:var(--red);margin-bottom:14px;font-weight:500}
   h2{font-size:clamp(20px,3.2vw,28px);font-weight:500;letter-spacing:.10em;margin-bottom:8px}
-  .h-sub{color:var(--ink-dim);font-size:14px;margin-bottom:40px;max-width:640px}
-
-  /* ステータスラベル */
+  .h-sub{color:var(--ink-dim);font-size:14px;margin-bottom:40px;max-width:660px}
   .st{font-size:11px;letter-spacing:.08em;color:var(--ink-dim);white-space:nowrap}
 
-  /* ============ hero ============ */
-  .hero{min-height:88svh;display:flex;flex-direction:column;justify-content:center;
+  /* ---------- hero ---------- */
+  .hero{min-height:86svh;display:flex;flex-direction:column;justify-content:center;
         padding:clamp(48px,8vh,96px) var(--gutter);max-width:980px;margin:0 auto}
-  .hero .wordmark{
-    font-family:'Poppins',sans-serif;font-weight:600;
-    font-size:clamp(40px,9vw,88px);letter-spacing:.18em;line-height:1.05;
-  }
-  .hero .wordmark .jp{
-    display:block;font-family:'Noto Sans JP',sans-serif;font-weight:300;
-    font-size:clamp(16px,3vw,24px);letter-spacing:.62em;color:var(--ink-dim);margin-top:14px;
-  }
-  .hero .tagline{
-    font-family:'Poppins',sans-serif;font-style:italic;font-weight:300;
-    font-size:clamp(15px,2.4vw,20px);color:var(--ink-dim);margin-top:36px;letter-spacing:.06em;
-  }
+  .hero .wordmark{font-family:'Poppins',sans-serif;font-weight:600;
+                  font-size:clamp(40px,9vw,88px);letter-spacing:.18em;line-height:1.05}
+  .hero .wordmark .jp{display:block;font-family:'Noto Sans JP',sans-serif;font-weight:300;
+                      font-size:clamp(16px,3vw,24px);letter-spacing:.62em;color:var(--ink-dim);margin-top:14px}
+  .hero .tagline{font-family:'Poppins',sans-serif;font-style:italic;font-weight:300;
+                 font-size:clamp(15px,2.4vw,20px);color:var(--ink-dim);margin-top:36px;letter-spacing:.06em}
   .hero .divider{width:56px;height:2px;background:var(--red);margin:32px 0}
-  .hero .oneline{max-width:560px;font-size:clamp(14px,1.9vw,16px)}
-  .hero .meta{margin-top:44px;font-size:11px;letter-spacing:.14em;color:var(--ink-faint)}
+  .hero .oneline{max-width:580px;font-size:clamp(14px,1.9vw,16px)}
+  .hero .meta{margin-top:40px;font-size:11px;letter-spacing:.14em;color:var(--ink-faint)}
   .hero .meta .live{color:var(--red)}
-
-  /* 凡例 */
   .legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:18px;font-size:11.5px;color:var(--ink-dim);letter-spacing:.06em}
 
-  /* ============ 30秒でわかる ============ */
+  /* ---------- 30秒 ---------- */
   .triad{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:720px){.triad{grid-template-columns:1fr}}
-  .cell{
-    background:var(--card);border:1px solid var(--rule);padding:26px 22px;
-  }
+  .cell{background:var(--card);border:1px solid var(--rule);padding:26px 22px}
   .cell .no{font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.3em;color:var(--red);margin-bottom:12px}
   .cell h3{font-size:15.5px;font-weight:500;letter-spacing:.08em;margin-bottom:10px}
   .cell p{font-size:13.5px;color:var(--ink-dim)}
-  .visual-line{margin-top:22px;font-size:13px;color:var(--ink-dim);border-left:2px solid var(--rule);padding-left:16px}
 
-  /* ============ 56拍ウィジェット ============ */
+  /* ---------- 56拍ウィジェット ---------- */
   .machine{border:1px solid var(--rule);background:var(--card);padding:clamp(18px,3vw,32px);margin:8px 0 28px}
   .machine-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
   .counters{font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.12em;color:var(--ink-dim);display:flex;gap:18px;flex-wrap:wrap}
   .counters b{color:var(--ink);font-weight:500}
-  #playBtn{
-    font-family:'Poppins',sans-serif;letter-spacing:.22em;font-size:12px;
-    background:none;color:var(--ink);border:1px solid var(--ink-dim);
-    padding:10px 26px;cursor:pointer;transition:border-color .2s,color .2s;text-transform:lowercase;
-  }
+  #playBtn{font-family:'Poppins',sans-serif;letter-spacing:.22em;font-size:12px;background:none;color:var(--ink);
+           border:1px solid var(--ink-dim);padding:10px 26px;cursor:pointer;transition:border-color .2s,color .2s;text-transform:lowercase}
   #playBtn:hover{border-color:var(--red);color:var(--red)}
   .tracks{overflow-x:auto;padding-bottom:6px}
   .track{display:grid;grid-template-columns:130px 1fr;align-items:center;gap:14px;margin-bottom:14px;min-width:660px}
   .track-label{font-size:11.5px;color:var(--ink-dim);letter-spacing:.06em;line-height:1.5}
   .track-label b{display:block;color:var(--ink);font-weight:500;font-size:12.5px}
   .beats{display:grid;grid-template-columns:repeat(56,1fr);gap:2px}
-  .beat{
-    aspect-ratio:1/1.6;background:rgba(245,240,232,.10);min-width:6px;
-    transition:background .12s;
-  }
+  .beat{aspect-ratio:1/1.6;background:rgba(245,240,232,.10);min-width:6px;transition:background .12s}
   .beat.cycle-start{background:rgba(245,240,232,.30)}
   .beat.clap{background:rgba(219,38,38,.55)}
   .beat.riff{background:rgba(245,240,232,.05);outline:1px solid rgba(219,38,38,.35);outline-offset:-1px}
@@ -113,94 +88,125 @@
   .beat.now.clap{background:var(--red)!important}
   .machine-note{font-size:12px;color:var(--ink-faint);margin-top:10px;letter-spacing:.05em}
 
-  .principles{list-style:none;margin-top:34px}
-  .principles li{
-    border-top:1px solid var(--rule);padding:18px 0;display:grid;
-    grid-template-columns:minmax(150px,220px) 1fr;gap:8px 24px;font-size:13.5px;
-  }
-  @media(max-width:640px){.principles li{grid-template-columns:1fr}}
-  .principles b{font-weight:500;letter-spacing:.06em}
-  .principles span{color:var(--ink-dim)}
+  /* ---------- 共通ルールリスト ---------- */
+  .rules{list-style:none;margin-top:30px}
+  .rules li{border-top:1px solid var(--rule);padding:17px 0;display:grid;
+            grid-template-columns:minmax(160px,240px) 1fr;gap:6px 24px;font-size:13.5px}
+  @media(max-width:640px){.rules li{grid-template-columns:1fr}}
+  .rules b{font-weight:500;letter-spacing:.05em}
+  .rules span{color:var(--ink-dim)}
 
-  /* ============ スタイルカード ============ */
-  .styles{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-  @media(max-width:720px){.styles{grid-template-columns:1fr}}
-  .style-card{background:var(--card);border:1px solid var(--rule);padding:24px 22px}
-  .style-card .rank{font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.26em;color:var(--red);margin-bottom:10px}
-  .style-card h3{font-size:16px;font-weight:500;letter-spacing:.1em}
-  .style-card .formula{font-size:12.5px;color:var(--ink-dim);margin:6px 0 14px}
-  .style-card p{font-size:13px;color:var(--ink-dim)}
-  .style-card .data{margin-top:12px;font-size:12px;color:var(--ink-faint);border-top:1px solid var(--rule);padding-top:12px}
-  .dead{opacity:.55}
+  /* ---------- フォーマット仕様書 ---------- */
+  .fmt{border:1px solid var(--rule);background:var(--card);padding:clamp(20px,3vw,30px);margin-bottom:22px}
+  .fmt.retired{opacity:.62}
+  .fmt-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;
+            border-bottom:1px solid var(--rule);padding-bottom:16px;margin-bottom:20px}
+  .fmt-head h3{font-size:19px;font-weight:500;letter-spacing:.1em}
+  .fmt-head .sys{font-size:12.5px;color:var(--ink-dim);margin-top:6px}
+  .fmt-head .total{font-family:'Poppins',sans-serif;font-size:12px;letter-spacing:.14em;color:var(--red);white-space:nowrap}
 
-  /* ============ テーブル ============ */
+  /* 小節フォームマップ */
+  .formmap{overflow-x:auto;margin-bottom:8px}
+  .bars{display:flex;gap:3px}
+  /* 1マス=1小節。全フォーマットで同じ幅にして譜面として比較できるようにする */
+  .bar{flex:0 0 34px;border:1px solid var(--rule);background:rgba(245,240,232,.05);
+       padding:9px 2px;text-align:center;font-family:'Poppins',sans-serif;font-size:10px;color:var(--ink-faint)}
+  .grp{display:flex;flex-direction:column;gap:5px}
+  .grp-label{font-size:11px;letter-spacing:.06em;color:var(--ink-dim);text-align:center;white-space:nowrap}
+  .seg{display:flex;gap:3px}
+  .seg-wrap{display:flex;gap:12px;width:max-content}
+  .seg-block{display:flex;flex-direction:column;gap:6px}
+  .bar.riff-bar{background:rgba(219,38,38,.14);border-color:rgba(219,38,38,.4);color:var(--ink-dim)}
+  .bar.chorus-bar{background:rgba(245,240,232,.13);color:var(--ink-dim)}
+  .bar.call-bar{background:rgba(245,240,232,.09);color:var(--ink-dim)}
+  .bar.fill-bar{background:rgba(245,240,232,.02);border-style:dashed}
+  .map-note{font-size:11.5px;color:var(--ink-faint);margin-top:10px;letter-spacing:.04em}
+
+  /* 位相ズレ2段マップ */
+  .phase{display:flex;flex-direction:column;gap:8px;width:max-content}
+  .phase-row{display:grid;grid-template-columns:96px auto;align-items:center;gap:12px}
+  .phase-row .seg{gap:12px}
+  .phase-row .lb{font-size:11px;color:var(--ink-dim);letter-spacing:.05em;line-height:1.45}
+  .phase-row .lb b{display:block;color:var(--ink);font-weight:500;font-size:11.5px}
+
+  /* 取り決めリスト */
+  .spec{list-style:none;margin-top:18px}
+  .spec li{padding:9px 0;border-top:1px dashed var(--rule);display:grid;
+           grid-template-columns:minmax(104px,132px) 1fr;gap:4px 18px;font-size:13px}
+  @media(max-width:640px){.spec li{grid-template-columns:1fr}}
+  .spec .k{color:var(--red);font-size:11px;letter-spacing:.16em;font-family:'Poppins',sans-serif;padding-top:4px}
+  .spec .v{color:var(--ink-dim)}
+  .spec .v strong{color:var(--ink);font-weight:400}
+  .breaker{margin-top:16px;border-left:2px solid var(--red);padding:4px 0 4px 16px;font-size:12.5px;color:var(--ink-dim)}
+  .breaker b{color:var(--ink);font-weight:500;letter-spacing:.04em}
+
+  /* ---------- 部品カタログ ---------- */
+  .parts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  @media(max-width:720px){.parts{grid-template-columns:1fr}}
+  .part{background:var(--card);border:1px solid var(--rule);padding:20px 20px}
+  .part h3{font-size:14.5px;font-weight:500;letter-spacing:.08em;margin-bottom:12px}
+  .part ul{list-style:none;font-size:12.5px;color:var(--ink-dim)}
+  .part li{padding:4px 0 4px 14px;position:relative}
+  .part li::before{content:"–";position:absolute;left:0;color:var(--ink-faint)}
+  .part .used{color:var(--ink-faint);font-size:11px}
+
+  /* ---------- テーブル ---------- */
   .tbl-wrap{overflow-x:auto}
   table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px}
   th,td{text-align:left;padding:13px 14px;border-top:1px solid var(--rule);vertical-align:top}
   th{font-weight:500;letter-spacing:.08em;color:var(--ink-dim);font-size:12px}
-  td:first-child{font-weight:400}
   .num{font-family:'Poppins',sans-serif}
 
-  /* ============ details（仮説） ============ */
+  /* ---------- details ---------- */
   details{border-top:1px solid var(--rule)}
   details:last-of-type{border-bottom:1px solid var(--rule)}
-  summary{
-    cursor:pointer;padding:20px 4px;font-size:14px;letter-spacing:.05em;
-    display:flex;align-items:baseline;gap:14px;list-style:none;
-  }
+  summary{cursor:pointer;padding:19px 4px;font-size:14px;letter-spacing:.05em;
+          display:flex;align-items:baseline;gap:14px;list-style:none}
   summary::-webkit-details-marker{display:none}
-  summary::before{content:"+";font-family:'Poppins',sans-serif;color:var(--red);flex:0 0 auto;transition:transform .2s;display:inline-block}
+  summary::before{content:"+";font-family:'Poppins',sans-serif;color:var(--red);flex:0 0 auto;display:inline-block}
   details[open] summary::before{content:"−"}
-  details .body{padding:0 4px 26px 30px;font-size:13.5px;color:var(--ink-dim);max-width:660px}
+  details .body{padding:0 4px 24px 30px;font-size:13.5px;color:var(--ink-dim);max-width:680px}
   details .body p+p{margin-top:10px}
 
-  /* ============ 未解決・チップ ============ */
-  .open-q{margin-bottom:36px}
+  /* ---------- 未解決 ---------- */
+  .open-q{margin-bottom:34px}
   .open-q h3{font-size:15px;font-weight:500;letter-spacing:.08em;margin-bottom:10px}
-  .open-q p{font-size:13.5px;color:var(--ink-dim);max-width:660px}
+  .open-q p{font-size:13.5px;color:var(--ink-dim);max-width:680px}
   .options{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-  .chip{
-    font-size:12px;letter-spacing:.06em;border:1px solid var(--rule);
-    padding:7px 16px;color:var(--ink-dim);background:var(--card)
-  }
+  .chip{font-size:12px;letter-spacing:.06em;border:1px solid var(--rule);padding:7px 16px;color:var(--ink-dim);background:var(--card)}
   .chip small{color:var(--ink-faint)}
 
-  /* ============ これから ============ */
   .next-list{list-style:none}
-  .next-list li{border-top:1px solid var(--rule);padding:20px 0;display:grid;grid-template-columns:minmax(140px,200px) 1fr;gap:8px 24px;font-size:13.5px}
+  .next-list li{border-top:1px solid var(--rule);padding:19px 0;display:grid;grid-template-columns:minmax(140px,200px) 1fr;gap:8px 24px;font-size:13.5px}
   @media(max-width:640px){.next-list li{grid-template-columns:1fr}}
   .next-list b{font-weight:500;letter-spacing:.06em}
   .next-list span{color:var(--ink-dim)}
 
-  /* ============ footer ============ */
   footer{padding:60px var(--gutter) 40px;max-width:980px;margin:0 auto;border-top:1px solid var(--rule)}
   footer .legend{margin-bottom:26px}
-  footer .note{font-size:12px;color:var(--ink-faint);letter-spacing:.05em;max-width:640px}
-  footer .brand{
-    margin-top:34px;font-family:'Poppins',sans-serif;font-size:11px;
-    letter-spacing:.26em;color:var(--ink-faint);text-transform:lowercase;
-  }
+  footer .note{font-size:12px;color:var(--ink-faint);letter-spacing:.05em;max-width:660px}
+  footer .brand{margin-top:32px;font-family:'Poppins',sans-serif;font-size:11px;letter-spacing:.26em;color:var(--ink-faint);text-transform:lowercase}
 </style>
 </head>
 <body>
 
-<!-- 0. hero -->
+<!-- hero -->
 <header class="hero">
   <div class="wordmark en">yatara<span class="jp">夜　打　楽</span></div>
   <p class="tagline en">"If a jazz pianist lived in 1600s Japan."</p>
   <div class="divider"></div>
-  <p class="oneline">盆踊りのリズム構造を土台（OS）に、現代の音楽システムをひとつだけ載せる。<br>その組み合わせを一つずつ試しながら作られている、進行中の新ジャンル。</p>
-  <div class="meta en"><span class="live">● research in progress</span>&nbsp;&nbsp;last update 2026-08-04</div>
+  <p class="oneline">盆踊りのリズム構造を土台（OS）に、現代の音楽システムをひとつだけ載せる。<br>そのフォーマットごとの取り決めを、小節単位で全部公開する設計図。</p>
+  <div class="meta en"><span class="live">● research in progress</span>&nbsp;&nbsp;last update 2026-08-08</div>
   <div class="legend">
-    <span>🟢 確定（定義済み）</span><span>🟡 データ検証中</span><span>🔵 仮説（未検証）</span><span>⚫ 棄却</span>
+    <span>🟢 確定（定義済み）</span><span>🟡 検証中</span><span>🔵 未確定</span><span>⚫ 廃番</span>
   </div>
 </header>
 
-<!-- 1. 30秒でわかる -->
+<!-- 30秒 -->
 <section id="quick">
   <div class="kicker en">in 30 seconds</div>
   <h2>30秒でわかるYATARA</h2>
-  <p class="h-sub">YATARAは「1曲のスタイル」ではなく、土台と載せ替え可能なシステムでできた実験の枠組み。</p>
+  <p class="h-sub">YATARAは1曲のスタイル名ではなく、土台と載せ替え可能なシステムでできた作曲の枠組み。</p>
   <div class="triad">
     <div class="cell">
       <div class="no en">01 — base</div>
@@ -210,7 +216,7 @@
     <div class="cell">
       <div class="no en">02 — system</div>
       <h3>載せるシステム：現代音楽から1つ <span class="st">🟢</span></h3>
-      <p>ジャズのハーモニー、ゴスペルのコード進行、Afrobeatのクラーベ——。土台の上に現代の音楽システムを<strong>1つだけ</strong>載せて、反応を検証する。</p>
+      <p>ゴスペルのコード進行、Afrobeatのクラーベ、俳諧の575、バッハの対位法——。土台の上に<strong>1つだけ</strong>載せて、フォーマットとして固める。</p>
     </div>
     <div class="cell">
       <div class="no en">03 — experience</div>
@@ -218,14 +224,13 @@
       <p>安全に体験できる強烈さ。「美しいのに脈絡がない」緊張と、「身体で着地する」解放。そこに懐かしさが混ざる（懐かしさの正体は検証中 🟡）。</p>
     </div>
   </div>
-  <p class="visual-line">ビジュアル言語 🟢 — 赤（覚醒・衝動・命）×黒（静寂・余白・秩序）。画面の情報は削り、赤と演者と音の構造だけを見せる。</p>
 </section>
 
-<!-- 2. 構造OS -->
-<section id="structure">
-  <div class="kicker en">the 56-beat engine</div>
-  <h2>構造OS — 56拍のフラクタル・シンクロニシティ <span class="st">🟢</span></h2>
-  <p class="h-sub">周期の違う3つのレイヤーが、56拍でぴったり同時に頭へ戻る。再生して、3本のレイヤーが揃う瞬間を見てほしい。</p>
+<!-- 共通OS -->
+<section id="os">
+  <div class="kicker en">the shared operating system</div>
+  <h2>共通OS — 全フォーマットが従う骨格 <span class="st">🟢</span></h2>
+  <p class="h-sub">周期の違う3つのレイヤーが、56拍でぴったり同時に頭へ戻る。再生して、3本が揃う瞬間を見てほしい。</p>
 
   <div class="machine">
     <div class="machine-head">
@@ -254,160 +259,312 @@
     <p class="machine-note">■ 明るいマス=周期の頭　■ 赤=拍手（パパウンパン）　■ 赤枠=リフ2小節。拍手は小節線をまたいで浮遊し、4周目の終わりで全レイヤーが同時に頭へ戻る。</p>
   </div>
 
-  <ul class="principles">
-    <li><b>メインビートはステップで踏む 🟢</b><span>他の民謡楽と同じく、メインビートは踊りのステップが担い、打楽器（特に太鼓）はクロスビートを強調する。だから素人には「逆さま」に聞こえる。</span></li>
-    <li><b>Ghost Downbeat 🟢</b><span>1拍目を強調しない。上の原理の帰結。</span></li>
-    <li><b>メロディは裏拍から始まる 🟢</b><span>シンコペーションが構造に組み込まれている。</span></li>
-    <li><b>小節レベルのポリリズム 🟢</b><span>4小節フレーズの上に3小節単位のメロディが乗るため、拍だけでなく小節のレベルでもズレが生まれる。</span></li>
+  <ul class="rules">
+    <li><b>1周期 = 14小節 / 56拍 🟢</b><span>12小節（展開）+ 2小節（リフ／解決）。4/4。</span></li>
+    <li><b>12小節 = 3小節メロディ × 4回 🟢</b><span>4小節フレーズが基準の音楽に、3小節単位のメロディを乗せる。拍だけでなく<strong>小節のレベルでもポリリズムのズレ</strong>が発生する。</span></li>
+    <li><b>拍手 = 11 + 3 🟢</b><span>11拍の静寂 → 3拍の拍手（パパウンパン）。14拍周期なので小節線をまたいで浮遊し、4周でちょうど頭に戻る。</span></li>
+    <li><b>メロディは裏拍から始まる 🟢</b><span>シンコペーションを構造として組み込む。</span></li>
+    <li><b>Ghost Downbeat 🟢</b><span>1拍目を強調しない。</span></li>
+    <li><b>メインビート＝ステップ／打楽器＝クロスビート 🟢</b><span>他の民謡楽と同じく、メインビートは踊りのステップが踏み、打楽器（特に太鼓）はクロスビートを強調する。そのため素人には逆さまに聞こえる。Ghost Downbeatはこの原理の帰結。</span></li>
+    <li><b>構造を毎回名指しする 🟢</b><span>発信では「14小節」「56拍」「11拍の静寂＋3拍の拍手」のどれかを必ず1つ言語化する。</span></li>
   </ul>
 </section>
 
-<!-- 3. 実験の記録 -->
-<section id="experiments">
-  <div class="kicker en">experiments</div>
-  <h2>実験の記録 — 土台 × 載せるシステム</h2>
-  <p class="h-sub">2026年3月、4スタイル×2ラウンド（プログラミング版 / NYライブドラム混合版）計8投稿をSNSで検証。数値はその8投稿の実験ログから。</p>
-  <div class="styles">
-    <div class="style-card">
-      <div class="rank en">#1 — flagship</div>
-      <h3>HIDA <span class="st">🟡 検証継続</span></h3>
-      <div class="formula">土台 × ゴスペルサウンド（11拍メロディ+1拍休み）</div>
-      <p>広く、深い。オールラウンダー。</p>
-      <div class="data">IG平均視聴 12,080ms＝他スタイルの1.3〜1.6倍（n=8投稿中の比較）。深度全指標で1位。</div>
+<!-- フォーマット仕様書 -->
+<section id="formats">
+  <div class="kicker en">format specifications</div>
+  <h2>フォーマット仕様書 — 曲の作り方</h2>
+  <p class="h-sub">土台は共通、上に載せるシステムでフォーマットが分かれる。各フォーマットの小節設計と取り決めを全部並べる。マップは左から右へ1マス＝1小節。</p>
+
+  <!-- HIDA -->
+  <div class="fmt">
+    <div class="fmt-head">
+      <div>
+        <h3>HIDA — 飛騨リズム <span class="st">🟢 定義確定 / 🟡 運用中</span></h3>
+        <div class="sys">載せるシステム: ゴスペルサウンド</div>
+      </div>
+      <div class="total en">14 bars / 56 beats</div>
     </div>
-    <div class="style-card">
-      <div class="rank en">#2 — replay machine</div>
-      <h3>Fast Shamisen Riff（Proto4） <span class="st">🟡 検証継続</span></h3>
-      <div class="formula">土台 × 速いテンポ+ポップ構成 × Afrobeat 3-2クラーベ × 三味線</div>
-      <p>三味線の音色は「カテゴライズ不能」——だからリプレイされる。YouTube特化型。</p>
-      <div class="data">YT完了率 R1 82.9% / R2 208.9%（100%超=平均2周再生）。</div>
+    <div class="formmap"><div class="seg-wrap">
+      <div class="seg-block"><div class="grp-label">リフ 2小節</div><div class="bars">
+        <div class="bar riff-bar">1</div><div class="bar riff-bar">2</div></div></div>
+      <div class="seg-block"><div class="grp-label">3小節メロディ × 4回 = 12小節</div><div class="bars">
+        <div class="bar">3</div><div class="bar">4</div><div class="bar">5</div>
+        <div class="bar">6</div><div class="bar">7</div><div class="bar">8</div>
+        <div class="bar">9</div><div class="bar">10</div><div class="bar">11</div>
+        <div class="bar">12</div><div class="bar">13</div><div class="bar">14</div></div></div>
+    </div></div>
+    <p class="map-note">※ リフの位置は正本間で記述が割れている（先頭 or 末尾）。裁定待ち。</p>
+    <ul class="spec">
+      <li><span class="k en">melody</span><span class="v"><strong>11拍メロディ + 1拍休み</strong> = 12拍単位［11+1］= 3小節。拍手の11+3のコンセプトを、そのままメロディに当てはめたもの</span></li>
+      <li><span class="k en">harmony</span><span class="v">ゴスペルのコード進行。ハーモニックにリッチな響き</span></li>
+      <li><span class="k en">structure</span><span class="v">コール&amp;レスポンス構造（「会話」の原型）</span></li>
+      <li><span class="k en">intro</span><span class="v">ゴスペルのイントロリフで入る（メロディ直入りにしない）</span></li>
+    </ul>
+    <div class="breaker"><b>ルール破り:</b> サビの倍繰り返しをここで先行実施。以後Proto4がこれに倣う</div>
+  </div>
+
+  <!-- SAPPORO -->
+  <div class="fmt retired">
+    <div class="fmt-head">
+      <div>
+        <h3>SAPPORO — レイドバック札幌 <span class="st">⚫ フォームは廃番（2026-04）</span></h3>
+        <div class="sys">載せるシステム: レイドバックグルーヴ（遅めバックビート）</div>
+      </div>
+      <div class="total en">14 bars / 56 beats</div>
     </div>
-    <div class="style-card">
-      <div class="rank en">#3 — deep &amp; narrow</div>
-      <h3>575 <span class="st">🟡 検証継続</span></h3>
-      <div class="formula">土台 × 俳句構造メロディ（5-7-5） × バッハ対位法 × ゴスペル進行</div>
-      <p>到達は狭いが、届いた人には深く刺さる。倍速のハーモニックリズム。</p>
-      <div class="data">YT視聴速度の加速5.0倍（4スタイル中最大）。</div>
+    <div class="formmap"><div class="seg-wrap">
+      <div class="seg-block"><div class="grp-label">バース 3小節</div><div class="bars">
+        <div class="bar">1</div><div class="bar">2</div><div class="bar">3</div></div></div>
+      <div class="seg-block"><div class="grp-label">合いの手 2</div><div class="bars">
+        <div class="bar call-bar">4</div><div class="bar call-bar">5</div></div></div>
+      <div class="seg-block"><div class="grp-label">バース 3小節</div><div class="bars">
+        <div class="bar">6</div><div class="bar">7</div><div class="bar">8</div></div></div>
+      <div class="seg-block"><div class="grp-label">コーラス（サビ）4小節</div><div class="bars">
+        <div class="bar chorus-bar">9</div><div class="bar chorus-bar">10</div>
+        <div class="bar chorus-bar">11</div><div class="bar chorus-bar">12</div></div></div>
+      <div class="seg-block"><div class="grp-label">リフ 2</div><div class="bars">
+        <div class="bar riff-bar">13</div><div class="bar riff-bar">14</div></div></div>
+    </div></div>
+    <p class="map-note">3+2+3 の構成は「3小節メロディ×4＝12小節」の変化形。サビを標準的な4小節にするために、バースの間に2小節の合いの手（コール&amp;レスポンス）を挟んでいる。地方によって違う盆踊りが、同じ3小節単位のルールを共有している証拠。</p>
+    <ul class="spec">
+      <li><span class="k en">rhythm</span><span class="v">札幌盆踊りをバウンスさせる。<strong>バックビート（2の後ろにスネア）</strong></span></li>
+      <li><span class="k en">bass</span><span class="v"><strong>3の後ろにベース</strong>（ぴったり合わせる）</span></li>
+      <li><span class="k en">feel</span><span class="v">レイドバックのウォーキングをメインに</span></li>
+      <li><span class="k en">試した</span><span class="v">7拍のヒップホップコードループ／3拍メロディ+3拍休みのループ（Round 1で使用 → Round 2で外し、元の盆踊りメロディ構成へ戻した）</span></li>
+    </ul>
+    <div class="breaker"><b>廃番の理由と救出:</b> 廃番にしたのは<strong>フォーム全体</strong>であって、メロディではない。キャッチーな4小節サビの構造はProto4へ流用して生きている</div>
+  </div>
+
+  <!-- 575 -->
+  <div class="fmt">
+    <div class="fmt-head">
+      <div>
+        <h3>575 — 俳諧構造メロディ <span class="st">🟢 定義確定 / 🟡 運用中</span></h3>
+        <div class="sys">載せるシステム: 5-7-5 の言葉リズム × バッハの対位法 × ゴスペル進行</div>
+      </div>
+      <div class="total en">14 bars / 56 beats</div>
     </div>
-    <div class="style-card dead">
-      <div class="rank en">#4 — retired</div>
-      <h3>SAPPORO <span class="st">⚫ ボツ（2026-04）</span></h3>
-      <div class="formula">土台 × レイドバックグルーヴ（遅めバックビート）</div>
-      <p>全指標最下位。レイドバック=BGM的でスクロールされた。ただし失敗ではなく素材化——キャッチーな4小節サビの構造はProto4に流用され生きている。</p>
-      <div class="data">敗因はメロディでなくフォーム全体（検証で判明）。</div>
+    <div class="formmap"><div class="seg-wrap">
+      <div class="seg-block"><div class="grp-label">12小節（5-7-5のノート配分）</div><div class="bars">
+        <div class="bar">1</div><div class="bar">2</div><div class="bar">3</div>
+        <div class="bar">4</div><div class="bar">5</div><div class="bar">6</div>
+        <div class="bar">7</div><div class="bar">8</div><div class="bar">9</div>
+        <div class="bar">10</div><div class="bar">11</div><div class="bar">12</div></div></div>
+      <div class="seg-block"><div class="grp-label">リフ 2小節（倍速感が最も出る）</div><div class="bars">
+        <div class="bar riff-bar">13</div><div class="bar riff-bar">14</div></div></div>
+    </div></div>
+    <ul class="spec">
+      <li><span class="k en">melody</span><span class="v">5-7-5 のノート配分。言葉のリズムがそのまま音楽のリズムになる。少ないノートで構造を見せる</span></li>
+      <li><span class="k en">counter</span><span class="v">バッハの対位法</span></li>
+      <li><span class="k en">harmony</span><span class="v">ゴスペルのコード進行</span></li>
+      <li><span class="k en">harmonic rhythm</span><span class="v"><strong>他フォーマットの倍速でハーモニーが進む</strong>。そのため同じ14小節でも「すごくゆっくりの7小節」にも「速いテンポの14小節」にも聴こえる。リフ2小節で倍速感が最も顕著</span></li>
+      <li><span class="k en">余白</span><span class="v">間が意味を持つ（俳諧の装置をリズムに移す）</span></li>
+    </ul>
+  </div>
+
+  <!-- Proto4 -->
+  <div class="fmt">
+    <div class="fmt-head">
+      <div>
+        <h3>Fast Shamisen Riff（Proto4） <span class="st">🟢 定義確定 / 🔵 Verse内部は未確定</span></h3>
+        <div class="sys">載せるシステム: 速いテンポ＋ポップ構成（V–Ch–Ch）× Afrobeat 3-2クラーベ × 三味線</div>
+      </div>
+      <div class="total en">18 bars</div>
     </div>
+    <div class="formmap"><div class="seg-wrap">
+      <div class="seg-block"><div class="grp-label">Verse 2</div><div class="bars">
+        <div class="bar">1</div><div class="bar">2</div></div></div>
+      <div class="seg-block"><div class="grp-label">Verse 4（真ん中が長い）</div><div class="bars">
+        <div class="bar">3</div><div class="bar">4</div><div class="bar">5</div><div class="bar">6</div></div></div>
+      <div class="seg-block"><div class="grp-label">フィルイン 2</div><div class="bars">
+        <div class="bar fill-bar">7</div><div class="bar fill-bar">8</div></div></div>
+      <div class="seg-block"><div class="grp-label">Chorus 4 × 2回 = 8小節</div><div class="bars">
+        <div class="bar chorus-bar">9</div><div class="bar chorus-bar">10</div><div class="bar chorus-bar">11</div><div class="bar chorus-bar">12</div>
+        <div class="bar chorus-bar">13</div><div class="bar chorus-bar">14</div><div class="bar chorus-bar">15</div><div class="bar chorus-bar">16</div></div></div>
+      <div class="seg-block"><div class="grp-label">リフ 2</div><div class="bars">
+        <div class="bar riff-bar">17</div><div class="bar riff-bar">18</div></div></div>
+    </div></div>
+    <p class="map-note">Verseの8小節（2+4+2）は一つの流れ。同じようなメロディの繰り返しだが真ん中が長く、最後の2小節はフィルインとしてサビへ向かう。</p>
+    <ul class="spec">
+      <li><span class="k en">riff × chord</span><span class="v"><strong>3小節のリフに対してコードは4小節</strong>で回る。リフとハーモニーの周期が最初からズレている</span></li>
+      <li><span class="k en">clave</span><span class="v">Afrobeat の 3-2 クラーベがポリリズムの骨格</span></li>
+      <li><span class="k en">drums</span><span class="v">スネアは2の後ろでレイドバック。<strong>バウンスはベルだけで作る</strong></span></li>
+      <li><span class="k en">timbre</span><span class="v">三味線＝ペンタトニック × 不規則アクセント × 撥の打撃感（パーカッシブな弦）</span></li>
+      <li><span class="k en">melody</span><span class="v">SAPPOROから救出したキャッチーな4小節サビを使用</span></li>
+    </ul>
+    <div class="breaker"><b>ルール破り:</b> <strong>コーラスを2倍に繰り返すため、11+3のループが外れて56拍の枠から出る</strong>（合計18小節）。ポップさが大幅に増す。HIDAで先行実施したルール破りに倣ったもの</div>
+  </div>
+
+  <!-- 575 with Nika -->
+  <div class="fmt">
+    <div class="fmt-head">
+      <div>
+        <h3>575 with Nika — 「あしあとが」 <span class="st">🟢 歌詞・構造確定 / 🔵 音響実装は未定</span></h3>
+        <div class="sys">載せるシステム: 俳諧の6句構造 × パーカッション（Nika）。YATARA初の盆踊り直系曲</div>
+      </div>
+      <div class="total en">12 + 2 bars</div>
+    </div>
+    <div class="formmap"><div class="phase">
+      <div class="phase-row">
+        <div class="lb"><b>メインピアノ</b>4小節区切り</div>
+        <div class="seg">
+          <div class="bars"><div class="bar">1</div><div class="bar">2</div><div class="bar">3</div><div class="bar">4</div></div>
+          <div class="bars"><div class="bar">5</div><div class="bar">6</div><div class="bar">7</div><div class="bar">8</div></div>
+          <div class="bars"><div class="bar">9</div><div class="bar">10</div><div class="bar">11</div><div class="bar">12</div></div>
+        </div>
+      </div>
+      <div class="phase-row">
+        <div class="lb"><b>575バック（囃子）</b>3小節区切り</div>
+        <div class="seg">
+          <div class="bars"><div class="bar call-bar">1</div><div class="bar call-bar">2</div><div class="bar call-bar">3</div></div>
+          <div class="bars"><div class="bar call-bar">4</div><div class="bar call-bar">5</div><div class="bar call-bar">6</div></div>
+          <div class="bars"><div class="bar call-bar">7</div><div class="bar call-bar">8</div><div class="bar call-bar">9</div></div>
+          <div class="bars"><div class="bar call-bar">10</div><div class="bar call-bar">11</div><div class="bar call-bar">12</div></div>
+        </div>
+      </div>
+    </div></div>
+    <p class="map-note">上下で区切りが一致しない＝<strong>意図的な位相ズレ</strong>。12小節で初めて両者の頭が揃う。共通OSの「4小節フレーズ上の3小節メロディ」を、2つの声部として実体化したもの。</p>
+    <ul class="spec">
+      <li><span class="k en">form</span><span class="v">12小節 + 2小節リフ（YATARA共通ルール準拠）</span></li>
+      <li><span class="k en">句</span><span class="v"><strong>7・5・7・7・5・5</strong> の6句36音（2+1+2+1型）。5-7-5ではない</span></li>
+      <li><span class="k en">back</span><span class="v">575バックは「セカンドメロディ」ではなく<strong>囃子のレイヤー</strong>。前に出ない／繰り返される／場の気配を作る</span></li>
+      <li><span class="k en">関係</span><span class="v">主従ではなく「並行する2つの世界」。盆踊り口説き節の「音頭取り × 囃子詞」と同型</span></li>
+      <li><span class="k en">装置</span><span class="v">季感／切れ字「や」（句1・句3）／連体止め（句5）／軽み（句6）／主語を置かない／付け（ずらして応答する連鎖）</span></li>
+      <li><span class="k en">未定</span><span class="v">575バックの音響実装（ボーカル／合唱／楽器化）。言語の最終形（古風寄り日本語のままか、ラテン文字音節化の並行版も作るか）</span></li>
+    </ul>
+  </div>
+
+  <!-- Ru drums -->
+  <div class="fmt">
+    <div class="fmt-head">
+      <div>
+        <h3>ライブドラム版（R版） <span class="st">🟡 検証中</span></h3>
+        <div class="sys">各フォーマットに共通で適用できる、プロダクション側の取り決め</div>
+      </div>
+      <div class="total en">production layer</div>
+    </div>
+    <ul class="spec">
+      <li><span class="k en">principle</span><span class="v">ライブドラマーの「カオス」を残す。プログラミングで整理しすぎない</span></li>
+      <li><span class="k en">mix</span><span class="v">プリセットドラムとの混合ではなく、生の対話をそのまま使い、プロダクションでギリギリ整理する</span></li>
+      <li><span class="k en">狙い</span><span class="v">「ギリギリの秩序」＝NYでしか出ないエネルギー</span></li>
+    </ul>
   </div>
 </section>
 
-<!-- 4. データが教えたこと -->
-<section id="findings">
-  <div class="kicker en">what the data taught us</div>
-  <h2>データが教えたこと — 「ささる」3条件 <span class="st">🟡</span></h2>
-  <p class="h-sub">8投稿の検証から抽出した、新スタイル開発・アレンジ判断の基準。サンプルは小さい（n=8）。原則として使いながら、検証を続けている。</p>
+<!-- 部品カタログ -->
+<section id="parts">
+  <div class="kicker en">parts catalogue</div>
+  <h2>部品カタログ — 次の組み合わせを作るための素材 <span class="st">🟢</span></h2>
+  <p class="h-sub">ルーツごとに取り出した部品。土台（盆踊り）は固定で、ここから1つ選んで載せると新しいフォーマットになる。</p>
+  <div class="parts">
+    <div class="part"><h3>盆踊り <span class="used">— 土台・固定</span></h3><ul>
+      <li>14小節サイクル（56拍）</li><li>12小節（展開）+ 2小節（リフ／解決）</li>
+      <li>11拍の静寂 + 3拍の拍手</li><li>繰り返しの中の微差（毎周回わずかに変わる）</li>
+      <li>「見るもの」と「踊るもの」が同じ場にいる構造</li></ul></div>
+    <div class="part"><h3>ゴスペル <span class="used">— HIDA・575で使用</span></h3><ul>
+      <li>11拍メロディ + 1拍休止（HIDAの核）</li><li>コード進行のハーモニックリッチさ</li>
+      <li>コール&amp;レスポンス構造（「会話」の原型）</li><li>倍速ハーモニックリズム</li></ul></div>
+    <div class="part"><h3>俳句・俳諧 <span class="used">— 575で使用</span></h3><ul>
+      <li>5-7-5のメロディノート配分</li><li>言葉のリズムが音楽のリズムになる</li>
+      <li>「余白」が意味を持つ（間の美学）</li><li>少ないノートで構造を見せる</li></ul></div>
+    <div class="part"><h3>三味線・邦楽 <span class="used">— Proto4で使用</span></h3><ul>
+      <li>3小節リフ（Proto4の核）</li><li>ペンタトニック × 不規則アクセント</li>
+      <li>ジャズから最も遠い音色</li><li>撥の打撃感（パーカッシブな弦楽器）</li></ul></div>
+    <div class="part"><h3>Afrobeat / クラーベ <span class="used">— Proto4で使用</span></h3><ul>
+      <li>3-2クラーベ</li><li>ポリリズムの骨格</li>
+      <li>ベルだけでバウンスを作る</li><li>ドラマーが「数えない」自由</li></ul></div>
+    <div class="part"><h3>ジャズ <span class="used">— SAPPORO等で使用</span></h3><ul>
+      <li>レイドバック（バックビートの後ろずれ）</li><li>インタープレイ（楽器同士の即興対話）</li>
+      <li>スネアの「置き」が毎回変わる</li><li>テンションコード（予測を裏切る和声）</li></ul></div>
+    <div class="part"><h3>ヒップホップ / R&amp;B <span class="used">— 一部試用</span></h3><ul>
+      <li>ループの催眠効果</li><li>少ない要素の反復（引き算）</li>
+      <li>当たり金のゴーストノート</li><li>声がリズム楽器になる</li></ul></div>
+    <div class="part"><h3>プロダクション <span class="used">— R版で使用</span></h3><ul>
+      <li>ライブドラマーの「カオス」を残す</li><li>プログラミングで整理しすぎない</li>
+      <li>「ギリギリの秩序」＝NYのエネルギー</li><li>プリセット混合ではなく生の対話</li></ul></div>
+  </div>
+</section>
+
+<!-- 作曲の判断基準 -->
+<section id="criteria">
+  <div class="kicker en">composition criteria</div>
+  <h2>新しいフォーマットを作るときの判断基準 <span class="st">🟡</span></h2>
+  <p class="h-sub">8投稿（2026年3月・4フォーマット×2ラウンド）の検証から取り出した3条件。新フォーマット開発・既存の改良・アレンジ判断に使う。</p>
   <div class="tbl-wrap"><table>
-    <tr><th>条件</th><th>内容</th><th>根拠（実験ログ n=8）</th></tr>
-    <tr><td>1. イントロリフで「謎」を作る</td><td>最初の2小節で謎を提示する。メロディ直入りは避ける</td><td class="num">リフ組の平均視聴 1.26倍</td></tr>
-    <tr><td>2. ジャズから遠い音色</td><td>カテゴライズ困難な音色ほどリプレイが起きる</td><td class="num">三味線 完了率82.9% ≫ ゴスペル 32.6%</td></tr>
-    <tr><td>3. 「会話」に聞こえること</td><td>楽器同士が対話する構造。全員が同じ方向を向く「プレゼン」は不適合</td><td>HIDA（会話構造）が深度全指標1位</td></tr>
+    <tr><th>条件</th><th>作曲上の意味</th><th>根拠（n=8投稿）</th></tr>
+    <tr><td>1. イントロリフで「謎」を作る</td><td>最初の2小節をリフにする。メロディ直入りを避ける</td><td class="num">リフ組の平均視聴 1.26倍</td></tr>
+    <tr><td>2. ジャズから遠い音色</td><td>カテゴライズ困難な音色ほど繰り返し聴かれる</td><td class="num">三味線 82.9% ≫ ゴスペル 32.6%</td></tr>
+    <tr><td>3. 「会話」に聞こえること</td><td>楽器同士が対話する構造にする。全員が同じ方向を向く「プレゼン」型にしない</td><td>HIDAが深度全指標1位</td></tr>
   </table></div>
-</section>
-
-<!-- 5. 検証中の仮説 -->
-<section id="hypotheses">
-  <div class="kicker en">open hypotheses</div>
-  <h2>検証中の仮説</h2>
-  <p class="h-sub">ジャンルは仮説の束でできている。いま立っている仮説と、その検証状態。</p>
-
-  <details>
-    <summary><span class="st">🟡</span>H5 — NYライブドラムの「カオス」がエンゲージメントを上げる</summary>
+  <details style="margin-top:26px">
+    <summary><span class="st">🟡</span>3条件の重み付けは見直し中 — 「会話感」が最重要かもしれない</summary>
     <div class="body">
-      <p>プログラミングで整理しすぎず、ライブドラマーの生の揺れを残した方が反応が上がる、という仮説。Round 2（Ruアルバムのライブドラム混合版）で検証。</p>
-      <p>中間判定: YouTube視聴速度は強く支持（比較した3ペアすべてで2〜5倍加速）。エンゲージメント深度はSAPPOROのみ明確に支持。「ギリギリの秩序」というNYのエネルギーの仮説は生きている。</p>
-    </div>
-  </details>
-  <details>
-    <summary><span class="st">🟡</span>H1〜H4 — スタイル別の勝ち筋仮説</summary>
-    <div class="body">
-      <p>H1: 初見反応はHIDAが最も高い / H2: ライブ来場意向はSAPPOROが最も高い（→⚫本体ボツで凍結）/ H3: 保存・再視聴は575が最も高い / H4: 速いテンポ+ポップ構成は反応率が高い。</p>
-      <p>H1・H3・H4は3月テスト期間の結果とおおむね整合。継続投稿で確認中。</p>
-    </div>
-  </details>
-  <details>
-    <summary><span class="st">🟡</span>ワンテイク仮説 — 品質のフロアは「演奏そのもの」</summary>
-    <div class="body">
-      <p>編集・グラフィックを足さない素のパフォーマンスクリップでも成立する（品質の下限は演奏が担保する）という仮説。週1投稿の運用で検証中。判定は2026年8月初週。</p>
-    </div>
-  </details>
-  <details>
-    <summary><span class="st">🟡</span>CQ-06 — 「懐かしさ」はYATARA特有か</summary>
-    <div class="body">
-      <p>リスナーが感じる懐かしさ（例:「ラッセラーに聞こえるところで気分が上がる」という配信メンバーの反応）は、日本の伝統リズム×NYジャズの組み合わせが生む<strong>YATARA固有の体験</strong>なのか、それとも音楽一般として届けたいものなのか。固有なら制作方針・スタイル選定の判断基準に組み込む。未解決。</p>
-    </div>
-  </details>
-  <details>
-    <summary><span class="st">🔵</span>「NY×日本の翻訳者」仮説 — なぜこの音楽が選ばれるのか</summary>
-    <div class="body">
-      <p>ライブアンケート（回答者43人中・自己選択サンプル）で指名理由の最多は「音楽的独自性・世界観・グルーヴ」11/43、次いで「新ジャンル開拓の現在進行形」7/43。「NYにいること」自体（4/43）より、<strong>NYのものを日本の文脈に翻訳して持ち帰る動作</strong>に反応が集まって見える。</p>
-      <p>YATARAはこの仮説の中心にある実践。ただし母集団への一般化は不可・未裁定の仮説。</p>
+      <p>バンドの即興演奏（リフ構造なし・音色もジャズそのもの＝条件1と2を満たさない）を1本投稿したところ、YouTubeの伸び速度が全投稿中で最大になった。3条件のうち<strong>会話感だけ</strong>で成立した形。</p>
+      <p>ここから「会話感 ≫ イントロリフ ≒ 音色の遠さ」という重み付けの可能性が出ている。ただしn=1・投稿2日目の観測で、同じ枠組みの投稿ではないため同列比較にはならない。YATARAの枠組み内で「会話感を高めた版」と「抑えた版」を作って比較する必要がある。</p>
     </div>
   </details>
 </section>
 
-<!-- 6. 未解決の問い -->
+<!-- 未解決 -->
 <section id="questions">
   <div class="kicker en">unresolved</div>
   <h2>未解決の問い — 深掘りの入口</h2>
-  <p class="h-sub">まだ答えを出していないもの。ここが次の思考の作業台。</p>
+  <p class="h-sub">構造の中でまだ確定していないもの。ここが次の作業台。</p>
 
   <div class="open-q">
-    <h3>Q1. YATARAの最終ゴールは何か <span class="st">🔵 未定義</span></h3>
-    <p>何を最適化するのかが決まっていない。挙がっている選択肢:</p>
+    <h3>Q1. リフは先頭か、末尾か <span class="st">🔵 記述が割れている</span></h3>
+    <p>14小節の内訳が、正本によって「2小節リフ ＋ 12小節メロディ」（リフ先頭）と「12小節（展開）＋ 2小節（リフ／解決）」（リフ末尾）で食い違っている。実際の演奏がどちらか、あるいはフォーマットごとに違うのかを確定させる必要がある。上のマップは後者で描いている。</p>
+  </div>
+
+  <div class="open-q">
+    <h3>Q2. Proto4のVerse内部の法則 <span class="st">🔵 特定中</span></h3>
+    <p>Verse 8小節（2+4+2）の内部が、3小節単位なのか2小節単位なのか、何の法則から来ているかが未確定。弾きながら確認中。ここが決まればProto4も「共通OSの変形」として説明できる。</p>
+  </div>
+
+  <div class="open-q">
+    <h3>Q3. 「懐かしさ」はYATARA特有か <span class="st">🔵 未検証</span></h3>
+    <p>リスナーが感じる懐かしさは、日本の伝統リズム×NYジャズの組み合わせが生むYATARA固有の体験なのか、音楽一般として届けたいものなのか。固有なら、フォーマット選定の判断基準に組み込む。</p>
+  </div>
+
+  <div class="open-q">
+    <h3>Q4. 次はどのシステムを載せるか <span class="st">🔵 候補</span></h3>
+    <p>3条件（謎のリフ／遠い音色／会話感）を満たす、まだ試していない組み合わせ。</p>
     <div class="options">
-      <span class="chip">ライブに来てもらう <small>— 体験をフルに提供できる唯一のチャネル</small></span>
-      <span class="chip">ストリーミング再生 <small>— 収益直結だが現在楽曲が未配信</small></span>
-      <span class="chip">グッズ <small>— 現段階では早い</small></span>
-      <span class="chip">利害を超えたつながり <small>— KPI設計が難しい</small></span>
+      <span class="chip">琴リフ × ファンク</span>
+      <span class="chip">尺八リフ × ラテン</span>
+      <span class="chip">部品カタログの未使用項目 <small>— 上のカタログから選ぶ</small></span>
     </div>
   </div>
 
   <div class="open-q">
-    <h3>Q2. Proto4のVerse内部構造の原理 <span class="st">🔵 特定中</span></h3>
-    <p>Verse 8小節（2+4+2）の内部が「何の法則から来ているか」（3小節単位か2小節単位か）が未確定。弾きながら確認中。</p>
-  </div>
-
-  <div class="open-q">
-    <h3>Q3. 次はどのシステムを載せるか <span class="st">🔵 素材リスト</span></h3>
-    <p>ルーツ別に棚卸しした素材。データが裏付けた3条件（謎のリフ / 遠い音色 / 会話感）を満たす組み合わせから試す。</p>
+    <h3>Q5. YATARAの最終ゴール <span class="st">🔵 未定義</span></h3>
     <div class="options">
-      <span class="chip">ゴスペル <small>— コール&レスポンス・倍速ハーモニー</small></span>
-      <span class="chip">俳句 <small>— 間の美学・少ないノートで構造を見せる</small></span>
-      <span class="chip">三味線/邦楽 <small>— 3小節リフ・撥の打撃感</small></span>
-      <span class="chip">Afrobeat <small>— 3-2クラーベ・ベルだけのバウンス</small></span>
-      <span class="chip">ジャズ <small>— インタープレイ・テンションコード</small></span>
-      <span class="chip">ヒップホップ/R&B <small>— ループの催眠・当たり金</small></span>
-      <span class="chip">プロダクション <small>— ライブドラムのカオスを残す</small></span>
+      <span class="chip">ライブに来てもらう</span>
+      <span class="chip">ストリーミング再生</span>
+      <span class="chip">グッズ</span>
+      <span class="chip">利害を超えたつながり</span>
     </div>
   </div>
 </section>
 
-<!-- 7. これから -->
+<!-- これから -->
 <section id="next">
   <div class="kicker en">what's next</div>
   <h2>これから</h2>
-  <p class="h-sub">実験はSNSの画面から、現場へ。</p>
   <ul class="next-list">
-    <li><b>Phase 2: NYの現場へ 🟢 決定</b><span>プログラミング検証から、NYライブドラマーとの現場セッションへフォーカスを移す（2026-04決定）。H5仮説（生のカオス）の本番検証。</span></li>
-    <li><b>「あしあとが」— 575 with Nika 🟢 歌詞確定</b><span>パーカッショニストNikaとのコラボ第1曲。YATARA初の盆踊り直系曲。7・5・7・7・5・5の6句構造と、意図的な位相ズレ。</span></li>
-    <li><b>アルバム候補 🟡 暫定</b><span>優先度 Tier 1: HIDA・Proto4 / Tier 2: 575（最終判断は保留中）。</span></li>
-    <li><b>2026年10–11月 日本ツアー 🟡 連携枠</b><span>実験の成果をライブに反映する枠を確保済み。</span></li>
+    <li><b>Phase 2: NYの現場へ 🟢 決定</b><span>プログラミングでの検証から、NYライブドラマーとの現場セッション制作へ。ライブドラムの「カオス」を残す取り決めの本番検証。</span></li>
+    <li><b>「あしあとが」録音 🟢 歌詞確定</b><span>575 with Nika 第1曲。残るのは575バックの音響実装（ボーカル／合唱／楽器化）の選択。</span></li>
+    <li><b>アルバム候補 🟡 暫定</b><span>Tier 1: HIDA・Proto4 ／ Tier 2: 575（最終判断は保留中）。</span></li>
+    <li><b>2026年10–11月 日本ツアー 🟡 連携枠</b><span>フォーマットの成果をライブに反映する枠を確保済み。</span></li>
   </ul>
 </section>
 
 <footer>
   <div class="legend">
-    <span>🟢 確定（定義済み）</span><span>🟡 データ検証中</span><span>🔵 仮説（未検証）</span><span>⚫ 棄却</span>
+    <span>🟢 確定（定義済み）</span><span>🟡 検証中</span><span>🔵 未確定</span><span>⚫ 廃番</span>
   </div>
-  <p class="note">このページは完成品の宣伝ではなく、進行中の研究の記録（living document）。仮説は検証され、棄却されたものも素材として残る。数値はすべて実験ログ（2026年3月・8投稿）に基づき、標本の大きさを併記している。</p>
+  <p class="note">このページは完成品の宣伝ではなく、進行中の設計図（living document）。取り決めは増え、廃番になったものも部品として残る。数値はすべて2026年3月の8投稿の実験ログに基づき、標本の大きさを併記している。</p>
   <div class="brand en">yatara — takahiro izumikawa / access art works</div>
 </footer>
 
@@ -426,15 +583,12 @@
       track.appendChild(d);cells.push(d);
     }
   }
-  // A: ドラム 8拍周期
   build(trackA,cellsA,function(i){return i%8===0?'cycle-start':'';});
-  // B: 拍手 14拍周期（11静寂+3拍手: 各周期の12-14拍目）
   build(trackB,cellsB,function(i){
     var p=i%14;
     if(p>=11)return 'clap';
     return p===0?'cycle-start':'';
   });
-  // C: 全体 56拍（3小節=12拍のメロディ単位×4 + リフ2小節=8拍）
   build(trackC,cellsC,function(i){
     if(i>=48)return 'riff';
     var unit=Math.floor(i/12);
@@ -475,7 +629,6 @@
     cBar.textContent=Math.floor(beat/4)+1;
     cA.textContent=Math.floor(beat/8)+1;
     cB.textContent=Math.floor(beat/14)+1;
-    // 音: 各拍ハット / ドラム周期頭キック / 拍手
     tone(3600,0.02,0.04,'square');
     if(beat%8===0)tone(105,0.12,0.5,'sine');
     if(beat%14>=11)clapSound();
