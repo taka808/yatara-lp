@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow"><!-- v2プレビュー。本公開時にHASHIRA承認の上で除去 -->
+<meta name="robots" content="noindex, nofollow">
 <title>YATARA / 夜打楽 — 新しいジャンルの設計図</title>
 <meta name="description" content="盆踊りのリズム構造を土台に、現代の音楽システムを載せて生まれる新ジャンル YATARA / 夜打楽。全フォーマットの小節設計・リズム・メロディ・ハーモニーの取り決めを公開する設計図。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -125,7 +125,8 @@
   /* 位相ズレ2段マップ */
   .phase{display:flex;flex-direction:column;gap:8px;width:max-content}
   .phase-row{display:grid;grid-template-columns:96px auto;align-items:center;gap:12px}
-  .phase-row .seg{gap:12px}
+  .phase-row .seg{gap:3px}
+  .bar.grp-start{border-left:2px solid rgba(219,38,38,.55)}
   .phase-row .lb{font-size:11px;color:var(--ink-dim);letter-spacing:.05em;line-height:1.45}
   .phase-row .lb b{display:block;color:var(--ink);font-weight:500;font-size:11.5px}
 
@@ -260,12 +261,13 @@
   </div>
 
   <ul class="rules">
-    <li><b>1周期 = 14小節 / 56拍 🟢</b><span>12小節（展開）+ 2小節（リフ／解決）。4/4。</span></li>
+    <li><b>1周期 = 14小節 / 56拍 🟢</b><span>12小節（展開）+ 2小節（リフ／解決）。4/4。リフ2小節の中身は<strong>三味線リフ／ハイハイ</strong>。</span></li>
     <li><b>12小節 = 3小節メロディ × 4回 🟢</b><span>4小節フレーズが基準の音楽に、3小節単位のメロディを乗せる。拍だけでなく<strong>小節のレベルでもポリリズムのズレ</strong>が発生する。</span></li>
     <li><b>拍手 = 11 + 3 🟢</b><span>11拍の静寂 → 3拍の拍手（パパウンパン）。14拍周期なので小節線をまたいで浮遊し、4周でちょうど頭に戻る。</span></li>
     <li><b>メロディは裏拍から始まる 🟢</b><span>シンコペーションを構造として組み込む。</span></li>
     <li><b>Ghost Downbeat 🟢</b><span>1拍目を強調しない。</span></li>
     <li><b>メインビート＝ステップ／打楽器＝クロスビート 🟢</b><span>他の民謡楽と同じく、メインビートは踊りのステップが踏み、打楽器（特に太鼓）はクロスビートを強調する。そのため素人には逆さまに聞こえる。Ghost Downbeatはこの原理の帰結。</span></li>
+    <li><b>ハングリーな攻撃性を忘れない 🟢</b><span>YATARAの音楽的エネルギーの核。洗練されても攻撃性を失わないこと。</span></li>
     <li><b>構造を毎回名指しする 🟢</b><span>発信では「14小節」「56拍」「11拍の静寂＋3拍の拍手」のどれかを必ず1つ言語化する。</span></li>
   </ul>
 </section>
@@ -294,7 +296,7 @@
         <div class="bar">9</div><div class="bar">10</div><div class="bar">11</div>
         <div class="bar">12</div><div class="bar">13</div><div class="bar">14</div></div></div>
     </div></div>
-    <p class="map-note">※ リフの位置は正本間で記述が割れている（先頭 or 末尾）。裁定待ち。</p>
+    <p class="map-note">HIDAはイントロリフ構造＝リフが<strong>先頭</strong>。最初の2小節で「謎」を作ってからメロディに入る。</p>
     <ul class="spec">
       <li><span class="k en">melody</span><span class="v"><strong>11拍メロディ + 1拍休み</strong> = 12拍単位［11+1］= 3小節。拍手の11+3のコンセプトを、そのままメロディに当てはめたもの</span></li>
       <li><span class="k en">harmony</span><span class="v">ゴスペルのコード進行。ハーモニックにリッチな響き</span></li>
@@ -367,25 +369,25 @@
   <div class="fmt">
     <div class="fmt-head">
       <div>
-        <h3>Fast Shamisen Riff（Proto4） <span class="st">🟢 定義確定 / 🔵 Verse内部は未確定</span></h3>
+        <h3>Fast Shamisen Riff（Proto4） <span class="st">🟢 定義確定 / 🔵 リフ小節数・Verse内部は未確定</span></h3>
         <div class="sys">載せるシステム: 速いテンポ＋ポップ構成（V–Ch–Ch）× Afrobeat 3-2クラーベ × 三味線</div>
       </div>
-      <div class="total en">18 bars</div>
+      <div class="total en">18 bars（リフ2小節の場合）</div>
     </div>
     <div class="formmap"><div class="seg-wrap">
+      <div class="seg-block"><div class="grp-label">三味線イントロリフ 2</div><div class="bars">
+        <div class="bar riff-bar">1</div><div class="bar riff-bar">2</div></div></div>
       <div class="seg-block"><div class="grp-label">Verse 2</div><div class="bars">
-        <div class="bar">1</div><div class="bar">2</div></div></div>
+        <div class="bar">3</div><div class="bar">4</div></div></div>
       <div class="seg-block"><div class="grp-label">Verse 4（真ん中が長い）</div><div class="bars">
-        <div class="bar">3</div><div class="bar">4</div><div class="bar">5</div><div class="bar">6</div></div></div>
+        <div class="bar">5</div><div class="bar">6</div><div class="bar">7</div><div class="bar">8</div></div></div>
       <div class="seg-block"><div class="grp-label">フィルイン 2</div><div class="bars">
-        <div class="bar fill-bar">7</div><div class="bar fill-bar">8</div></div></div>
+        <div class="bar fill-bar">9</div><div class="bar fill-bar">10</div></div></div>
       <div class="seg-block"><div class="grp-label">Chorus 4 × 2回 = 8小節</div><div class="bars">
-        <div class="bar chorus-bar">9</div><div class="bar chorus-bar">10</div><div class="bar chorus-bar">11</div><div class="bar chorus-bar">12</div>
-        <div class="bar chorus-bar">13</div><div class="bar chorus-bar">14</div><div class="bar chorus-bar">15</div><div class="bar chorus-bar">16</div></div></div>
-      <div class="seg-block"><div class="grp-label">リフ 2</div><div class="bars">
-        <div class="bar riff-bar">17</div><div class="bar riff-bar">18</div></div></div>
+        <div class="bar chorus-bar">11</div><div class="bar chorus-bar">12</div><div class="bar chorus-bar">13</div><div class="bar chorus-bar">14</div>
+        <div class="bar chorus-bar">15</div><div class="bar chorus-bar">16</div><div class="bar chorus-bar">17</div><div class="bar chorus-bar">18</div></div></div>
     </div></div>
-    <p class="map-note">Verseの8小節（2+4+2）は一つの流れ。同じようなメロディの繰り返しだが真ん中が長く、最後の2小節はフィルインとしてサビへ向かう。</p>
+    <p class="map-note">Verseの8小節（2+4+2）は一つの流れ。同じようなメロディの繰り返しだが真ん中が長く、最後の2小節はフィルインとしてサビへ向かう。<br>⚠️ <strong>リフの小節数は正本で割れている</strong>: 「リフ2小節・合計18小節」（定義正式版）と「3小節リフ」（スタイルレジストリ・実験ログ）。3小節なら合計19小節になる。マップは合計が閉じている前者で描いている。裁定待ち。</p>
     <ul class="spec">
       <li><span class="k en">riff × chord</span><span class="v"><strong>3小節のリフに対してコードは4小節</strong>で回る。リフとハーモニーの周期が最初からズレている</span></li>
       <li><span class="k en">clave</span><span class="v">Afrobeat の 3-2 クラーベがポリリズムの骨格</span></li>
@@ -400,7 +402,7 @@
   <div class="fmt">
     <div class="fmt-head">
       <div>
-        <h3>575 with Nika — 「あしあとが」 <span class="st">🟢 歌詞・構造確定 / 🔵 音響実装は未定</span></h3>
+        <h3>575 with Nika — 「あしあとが」 <span class="st">🟢 歌詞・構造確定 / 🔵 音響実装・登録区分は未定</span></h3>
         <div class="sys">載せるシステム: 俳諧の6句構造 × パーカッション（Nika）。YATARA初の盆踊り直系曲</div>
       </div>
       <div class="total en">12 + 2 bars</div>
@@ -409,29 +411,35 @@
       <div class="phase-row">
         <div class="lb"><b>メインピアノ</b>4小節区切り</div>
         <div class="seg">
-          <div class="bars"><div class="bar">1</div><div class="bar">2</div><div class="bar">3</div><div class="bar">4</div></div>
-          <div class="bars"><div class="bar">5</div><div class="bar">6</div><div class="bar">7</div><div class="bar">8</div></div>
-          <div class="bars"><div class="bar">9</div><div class="bar">10</div><div class="bar">11</div><div class="bar">12</div></div>
+          <div class="bars">
+            <div class="bar grp-start">1</div><div class="bar">2</div><div class="bar">3</div><div class="bar">4</div>
+            <div class="bar grp-start">5</div><div class="bar">6</div><div class="bar">7</div><div class="bar">8</div>
+            <div class="bar grp-start">9</div><div class="bar">10</div><div class="bar">11</div><div class="bar">12</div>
+            <div class="bar riff-bar">13</div><div class="bar riff-bar">14</div>
+          </div>
         </div>
       </div>
       <div class="phase-row">
         <div class="lb"><b>575バック（囃子）</b>3小節区切り</div>
         <div class="seg">
-          <div class="bars"><div class="bar call-bar">1</div><div class="bar call-bar">2</div><div class="bar call-bar">3</div></div>
-          <div class="bars"><div class="bar call-bar">4</div><div class="bar call-bar">5</div><div class="bar call-bar">6</div></div>
-          <div class="bars"><div class="bar call-bar">7</div><div class="bar call-bar">8</div><div class="bar call-bar">9</div></div>
-          <div class="bars"><div class="bar call-bar">10</div><div class="bar call-bar">11</div><div class="bar call-bar">12</div></div>
+          <div class="bars">
+            <div class="bar call-bar grp-start">1</div><div class="bar call-bar">2</div><div class="bar call-bar">3</div>
+            <div class="bar call-bar grp-start">4</div><div class="bar call-bar">5</div><div class="bar call-bar">6</div>
+            <div class="bar call-bar grp-start">7</div><div class="bar call-bar">8</div><div class="bar call-bar">9</div>
+            <div class="bar call-bar grp-start">10</div><div class="bar call-bar">11</div><div class="bar call-bar">12</div>
+            <div class="bar riff-bar">13</div><div class="bar riff-bar">14</div>
+          </div>
         </div>
       </div>
     </div></div>
-    <p class="map-note">上下で区切りが一致しない＝<strong>意図的な位相ズレ</strong>。12小節で初めて両者の頭が揃う。共通OSの「4小節フレーズ上の3小節メロディ」を、2つの声部として実体化したもの。</p>
+    <p class="map-note">赤い縦線が各声部の区切り。上下で位置が一致しない＝<strong>意図的な位相ズレ</strong>。12小節で初めて両者の頭が揃い、そこから2小節のリフへ抜ける。共通OSの「4小節フレーズ上の3小節メロディ」を、2つの声部として実体化したもの。<br>この12小節が一巡するたびに、句3の死者の気配と句6の「また歩く」がすれ違う。循環そのものが歌詞の設計意図。</p>
     <ul class="spec">
       <li><span class="k en">form</span><span class="v">12小節 + 2小節リフ（YATARA共通ルール準拠）</span></li>
       <li><span class="k en">句</span><span class="v"><strong>7・5・7・7・5・5</strong> の6句36音（2+1+2+1型）。5-7-5ではない</span></li>
       <li><span class="k en">back</span><span class="v">575バックは「セカンドメロディ」ではなく<strong>囃子のレイヤー</strong>。前に出ない／繰り返される／場の気配を作る</span></li>
       <li><span class="k en">関係</span><span class="v">主従ではなく「並行する2つの世界」。盆踊り口説き節の「音頭取り × 囃子詞」と同型</span></li>
       <li><span class="k en">装置</span><span class="v">季感／切れ字「や」（句1・句3）／連体止め（句5）／軽み（句6）／主語を置かない／付け（ずらして応答する連鎖）</span></li>
-      <li><span class="k en">未定</span><span class="v">575バックの音響実装（ボーカル／合唱／楽器化）。言語の最終形（古風寄り日本語のままか、ラテン文字音節化の並行版も作るか）</span></li>
+      <li><span class="k en">未定</span><span class="v">575バックの音響実装（ボーカル／合唱／楽器化）。言語の最終形（古風寄り日本語のままか、ラテン文字音節化の並行版も作るか）。<strong>独立フォーマットとして登録するか575の派生として扱うかも未決</strong>（スタイルレジストリ未登録）</span></li>
     </ul>
   </div>
 
@@ -494,13 +502,14 @@
   <div class="tbl-wrap"><table>
     <tr><th>条件</th><th>作曲上の意味</th><th>根拠（n=8投稿）</th></tr>
     <tr><td>1. イントロリフで「謎」を作る</td><td>最初の2小節をリフにする。メロディ直入りを避ける</td><td class="num">リフ組の平均視聴 1.26倍</td></tr>
-    <tr><td>2. ジャズから遠い音色</td><td>カテゴライズ困難な音色ほど繰り返し聴かれる</td><td class="num">三味線 82.9% ≫ ゴスペル 32.6%</td></tr>
+    <tr><td>2. ジャズから遠い音色</td><td>カテゴライズ困難な音色ほど繰り返し聴かれる</td><td class="num">YouTube完了率（Round 1）三味線 82.9% ≫ ゴスペル 32.6%</td></tr>
     <tr><td>3. 「会話」に聞こえること</td><td>楽器同士が対話する構造にする。全員が同じ方向を向く「プレゼン」型にしない</td><td>HIDAが深度全指標1位</td></tr>
+    <tr><td>4. サビ4小節はキャッチーでいい</td><td>サビを凝らずキャッチーな4小節にしてよい。うまくいかない時に疑うのはメロディではなくフォーム全体</td><td>SAPPOROの敗因はメロディでなくフォームと判明し、サビだけProto4へ救出できた</td></tr>
   </table></div>
   <details style="margin-top:26px">
     <summary><span class="st">🟡</span>3条件の重み付けは見直し中 — 「会話感」が最重要かもしれない</summary>
     <div class="body">
-      <p>バンドの即興演奏（リフ構造なし・音色もジャズそのもの＝条件1と2を満たさない）を1本投稿したところ、YouTubeの伸び速度が全投稿中で最大になった。3条件のうち<strong>会話感だけ</strong>で成立した形。</p>
+      <p>バンドの即興演奏（音色はジャズそのもので条件2を満たさず、リフ構造も無い可能性が高い＝動画構造は未確認）を1本投稿したところ、YouTubeの伸び速度が全投稿中で最大になった。3条件のうち<strong>会話感だけ</strong>で成立した形。</p>
       <p>ここから「会話感 ≫ イントロリフ ≒ 音色の遠さ」という重み付けの可能性が出ている。ただしn=1・投稿2日目の観測で、同じ枠組みの投稿ではないため同列比較にはならない。YATARAの枠組み内で「会話感を高めた版」と「抑えた版」を作って比較する必要がある。</p>
     </div>
   </details>
@@ -513,22 +522,33 @@
   <p class="h-sub">構造の中でまだ確定していないもの。ここが次の作業台。</p>
 
   <div class="open-q">
-    <h3>Q1. リフは先頭か、末尾か <span class="st">🔵 記述が割れている</span></h3>
-    <p>14小節の内訳が、正本によって「2小節リフ ＋ 12小節メロディ」（リフ先頭）と「12小節（展開）＋ 2小節（リフ／解決）」（リフ末尾）で食い違っている。実際の演奏がどちらか、あるいはフォーマットごとに違うのかを確定させる必要がある。上のマップは後者で描いている。</p>
+    <h3>Q1. 共通OSのリフ位置をどう定義するか <span class="st">🔵 正本の記述が割れている</span></h3>
+    <p>14小節の内訳が、正本によって「2小節リフ ＋ 12小節メロディ」（リフ先頭）と「12小節（展開）＋ 2小節（リフ／解決）」（リフ末尾）で食い違っている。</p>
+    <p>ただし実験ログを照合すると、実態は<strong>フォーマットごとに違う</strong>: HIDAとProto4はイントロリフ構造（リフが先頭）、SAPPOROと575はメロディ直入り（リフは末尾＝解決）。上のマップもその通りに描き分けてある。<br>決めるべきは「共通OSの表記をどちらかに統一するか、それとも<strong>リフの位置はフォーマットが選ぶ変数</strong>と定義するか」。後者なら、判断基準の条件1（イントロリフで謎を作る）は<strong>共通ルールではなく選択肢の一つ</strong>という位置づけになる。</p>
   </div>
 
   <div class="open-q">
-    <h3>Q2. Proto4のVerse内部の法則 <span class="st">🔵 特定中</span></h3>
+    <h3>Q2. Proto4のリフは2小節か3小節か <span class="st">🔵 正本の記述が割れている</span></h3>
+    <p>「リフ2小節・合計18小節」（定義正式版）と「3小節リフ」（スタイルレジストリ・実験ログ）が併存している。3小節なら合計19小節になる。リフの<strong>モチーフの長さ</strong>が3小節で、<strong>イントロとして置く区間</strong>が2小節、という読み方も成立する。実演で確定させる。</p>
+  </div>
+
+  <div class="open-q">
+    <h3>Q3. 「1つだけ載せる」原則と実態のズレ <span class="st">🔵 要整理</span></h3>
+    <p>YATARAの原則は「土台に現代の音楽システムを<strong>1つだけ</strong>載せる」。しかし実際には575は3つ（5-7-5 × バッハの対位法 × ゴスペル進行）、Proto4も3つ（ポップ構成 × クラーベ × 三味線）を載せている。<br>原則の方を「1つの<strong>系統</strong>から取る」等に更新するか、実態を1つに絞り直すか。実験の変数管理にも関わる。</p>
+  </div>
+
+  <div class="open-q">
+    <h3>Q4. Proto4のVerse内部の法則 <span class="st">🔵 特定中</span></h3>
     <p>Verse 8小節（2+4+2）の内部が、3小節単位なのか2小節単位なのか、何の法則から来ているかが未確定。弾きながら確認中。ここが決まればProto4も「共通OSの変形」として説明できる。</p>
   </div>
 
   <div class="open-q">
-    <h3>Q3. 「懐かしさ」はYATARA特有か <span class="st">🔵 未検証</span></h3>
+    <h3>Q5. 「懐かしさ」はYATARA特有か <span class="st">🔵 未検証</span></h3>
     <p>リスナーが感じる懐かしさは、日本の伝統リズム×NYジャズの組み合わせが生むYATARA固有の体験なのか、音楽一般として届けたいものなのか。固有なら、フォーマット選定の判断基準に組み込む。</p>
   </div>
 
   <div class="open-q">
-    <h3>Q4. 次はどのシステムを載せるか <span class="st">🔵 候補</span></h3>
+    <h3>Q6. 次はどのシステムを載せるか <span class="st">🔵 候補</span></h3>
     <p>3条件（謎のリフ／遠い音色／会話感）を満たす、まだ試していない組み合わせ。</p>
     <div class="options">
       <span class="chip">琴リフ × ファンク</span>
@@ -538,12 +558,12 @@
   </div>
 
   <div class="open-q">
-    <h3>Q5. YATARAの最終ゴール <span class="st">🔵 未定義</span></h3>
+    <h3>Q7. YATARAの最終ゴール <span class="st">🔵 未定義</span></h3>
     <div class="options">
       <span class="chip">ライブに来てもらう</span>
       <span class="chip">ストリーミング再生</span>
       <span class="chip">グッズ</span>
-      <span class="chip">利害を超えたつながり</span>
+      <span class="chip">長く続く聴き手との関係</span>
     </div>
   </div>
 </section>
