@@ -6,3 +6,8 @@ audio/
 *.aif
 *.aiff
 *.flac
+
+# Public demo page is intentionally allowed to carry its own audio.
+!demo/
+!demo/audio/
+!demo/audio/*.mp3

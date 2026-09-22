@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>YATARA demos</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111;
+      --ink: #f4f0e8;
+      --muted: rgba(244, 240, 232, .58);
+      --line: rgba(244, 240, 232, .18);
+      --red: #db2626;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background: var(--bg); }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(circle at 82% 8%, rgba(219, 38, 38, .13), transparent 28rem),
+        var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      font-weight: 400;
+      letter-spacing: .02em;
+    }
+
+    main {
+      width: min(100% - 40px, 920px);
+      margin: 0 auto;
+      padding: clamp(48px, 11vw, 116px) 0 64px;
+    }
+
+    h1 {
+      margin: 0 0 clamp(42px, 8vw, 84px);
+      font-size: clamp(28px, 6vw, 64px);
+      font-weight: 500;
+      letter-spacing: .22em;
+      line-height: 1;
+      text-transform: lowercase;
+    }
+
+    .demo {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px 28px;
+      align-items: center;
+      padding: 22px 0 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .demo:last-child { border-bottom: 1px solid var(--line); }
+
+    .title {
+      min-width: 0;
+      font-size: clamp(16px, 2.5vw, 21px);
+      line-height: 1.35;
+    }
+
+    .tempo {
+      color: var(--red);
+      font-size: 12px;
+      letter-spacing: .14em;
+      white-space: nowrap;
+    }
+
+    audio {
+      grid-column: 1 / -1;
+      width: 100%;
+      height: 38px;
+      margin-top: 3px;
+      accent-color: var(--red);
+    }
+
+    @media (max-width: 560px) {
+      main { width: min(100% - 28px, 920px); }
+      .demo { gap: 9px 16px; }
+      audio { height: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>yatara</h1>
+
+    <div class="demo">
+      <div class="title">変異トレシーじょ MIX</div>
+      <div class="tempo">81 BPM</div>
+      <audio controls preload="metadata" src="audio/hen-i-toreshijo-81bpm.mp3" aria-label="変異トレシーじょ MIX"></audio>
+    </div>
+
+    <div class="demo">
+      <div class="title">MAj7 MIX</div>
+      <div class="tempo">80 BPM</div>
+      <audio controls preload="metadata" src="audio/maj7-80bpm.mp3" aria-label="MAj7 MIX"></audio>
+    </div>
+
+    <div class="demo">
+      <div class="title">Things changed too soon</div>
+      <div class="tempo">90 BPM</div>
+      <audio controls preload="metadata" src="audio/things-changed-too-soon-90bpm.mp3" aria-label="Things changed too soon"></audio>
+    </div>
+
+    <div class="demo">
+      <div class="title">クリシェ MIX 1</div>
+      <div class="tempo">68 BPM</div>
+      <audio controls preload="metadata" src="audio/cliche-68bpm.mp3" aria-label="クリシェ MIX 1"></audio>
+    </div>
+
+    <div class="demo">
+      <div class="title">boom bop MIX1</div>
+      <div class="tempo">93 BPM</div>
+      <audio controls preload="metadata" src="audio/boom-bop-93bpm.mp3" aria-label="boom bop MIX1"></audio>
+    </div>
+
+    <div class="demo">
+      <div class="title">Fast 2-3 118 mix</div>
+      <div class="tempo">118 BPM</div>
+      <audio controls preload="metadata" src="audio/fast-2-3-118bpm.mp3" aria-label="Fast 2-3 118 mix"></audio>
+    </div>
+
+    <div class="demo">
+      <div class="title">afro idea MIX</div>
+      <div class="tempo">— BPM</div>
+      <audio controls preload="metadata" src="audio/afro-idea-mix.mp3" aria-label="afro idea MIX"></audio>
+    </div>
+
+    <div class="demo">
+      <div class="title">東京音頭</div>
+      <div class="tempo">112 BPM</div>
+      <audio controls preload="metadata" src="audio/tokyo-ondo-112bpm.mp3" aria-label="東京音頭"></audio>
+    </div>
+
+    <div class="demo">
+      <div class="title">R3 MIX</div>
+      <div class="tempo">— BPM</div>
+      <audio controls preload="metadata" src="audio/r3-mix.mp3" aria-label="R3 MIX"></audio>
+    </div>
+
+    <div class="demo">
+      <div class="title">18 mix</div>
+      <div class="tempo">— BPM</div>
+      <audio controls preload="metadata" src="audio/18-mix.mp3" aria-label="18 mix"></audio>
+    </div>
+
+    <div class="demo">
+      <div class="title">日本のクラーベ 2-3 demo</div>
+      <div class="tempo">136 BPM</div>
+      <audio controls preload="metadata" src="audio/nihon-no-clave-demo-136bpm.mp3" aria-label="日本のクラーベ 2-3 demo"></audio>
+    </div>
+
+    <div class="demo">
+      <div class="title">Sacrifice Nika録音</div>
+      <div class="tempo">98 BPM</div>
+      <audio controls preload="metadata" src="audio/nika-sacrifice.mp3" aria-label="Sacrifice Nika録音"></audio>
+    </div>
+  </main>
+</body>
+</html>
