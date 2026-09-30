@@ -11,3 +11,8 @@ audio/
 !demo/
 !demo/audio/
 !demo/audio/*.mp3
+
+# Public no-bass demo page carries its own audio.
+!nobass/
+!nobass/audio/
+!nobass/audio/*.mp3
