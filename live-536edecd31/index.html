@@ -46,6 +46,10 @@
       text-transform: lowercase;
     }
 
+    h2.first { margin-top: 0; }
+
+    .sub { color: var(--muted); font-size: .8em; margin-left: .4em; }
+
     h2 {
       margin: clamp(56px, 10vw, 96px) 0 20px;
       color: var(--muted);
@@ -72,7 +76,7 @@
       border-top: 1px solid var(--line);
     }
 
-    .demo:last-child { border-bottom: 1px solid var(--line); }
+    .demo:last-of-type, .demo:has(+ h2) { border-bottom: 1px solid var(--line); }
 
     .title {
       min-width: 0;
@@ -124,23 +128,21 @@
   <main>
     <h1>yatara live</h1>
 
+    <h2 class="first">YATARA</h2>
+
     <div class="demo">
       <div class="title">Boom Bop</div>
       <div class="tempo">83 BPM</div>
       <audio controls preload="metadata" src="files/boom-bop-with-bass.mp3" aria-label="Boom Bop"></audio>
       <div class="links">
         <a href="files/boom-bop-with-bass.mp3" download>Download MP3</a>
-        <a href="files/boom-bop-chart.pdf" target="_blank" rel="noopener">View chart</a>
-        <a href="files/boom-bop-chart.pdf" download>Download chart</a>
-        <a href="files/boom-bop-sketch.jpg" target="_blank" rel="noopener">View sketch</a>
-        <a href="files/boom-bop-sketch.jpg" download>Download sketch</a>
       </div>
     </div>
 
     <div class="demo">
-      <div class="title">Japanese Clave 2-3</div>
+      <div class="title">日本のクラーベ <span class="sub">Japanese Clave</span></div>
       <div class="tempo">136 BPM</div>
-      <audio controls preload="metadata" src="files/nihon-no-clave-136bpm-with-bass.mp3" aria-label="Japanese Clave 2-3"></audio>
+      <audio controls preload="metadata" src="files/nihon-no-clave-136bpm-with-bass.mp3" aria-label="日本のクラーベ Japanese Clave"></audio>
       <div class="links">
         <a href="files/nihon-no-clave-136bpm-with-bass.mp3" download>Download MP3</a>
       </div>
@@ -155,9 +157,11 @@
       </div>
     </div>
 
+    <h2>Not YATARA — Takahiro Izumikawa / Off Sync</h2>
+
     <div class="demo">
       <div class="title">Beneath the Surface</div>
-      <div class="tempo">Off Sync</div>
+      <div class="tempo"></div>
       <audio controls preload="metadata" src="files/beneath-the-surface.mp3" aria-label="Beneath the Surface"></audio>
       <div class="links">
         <a href="files/beneath-the-surface.mp3" download>Download MP3</a>
