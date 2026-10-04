@@ -21,3 +21,8 @@ audio/
 !live-536edecd31/
 !live-536edecd31/files/
 !live-536edecd31/files/*.mp3
+
+# Musician page (link-only) carries its own audio.
+!live-2ae9c45406/
+!live-2ae9c45406/files/
+!live-2ae9c45406/files/*.mp3
