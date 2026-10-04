@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>YATARA live tracks</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111;
+      --ink: #f4f0e8;
+      --muted: rgba(244, 240, 232, .58);
+      --line: rgba(244, 240, 232, .18);
+      --red: #db2626;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background: var(--bg); }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(circle at 82% 8%, rgba(219, 38, 38, .13), transparent 28rem),
+        var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      font-weight: 400;
+      letter-spacing: .02em;
+    }
+
+    main {
+      width: min(100% - 40px, 920px);
+      margin: 0 auto;
+      padding: clamp(48px, 11vw, 116px) 0 64px;
+    }
+
+    h1 {
+      margin: 0 0 clamp(42px, 8vw, 84px);
+      font-size: clamp(28px, 6vw, 64px);
+      font-weight: 500;
+      letter-spacing: .22em;
+      line-height: 1;
+      text-transform: lowercase;
+    }
+
+    h2 {
+      margin: clamp(56px, 10vw, 96px) 0 20px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .video {
+      width: min(100%, 360px);
+      aspect-ratio: 9 / 16;
+      border: 1px solid var(--line);
+    }
+
+    .video video { width: 100%; height: 100%; display: block; background: #000; }
+
+    .demo {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px 28px;
+      align-items: center;
+      padding: 22px 0 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .demo:last-child { border-bottom: 1px solid var(--line); }
+
+    .title {
+      min-width: 0;
+      font-size: clamp(16px, 2.5vw, 21px);
+      line-height: 1.35;
+    }
+
+    .tempo {
+      color: var(--red);
+      font-size: 12px;
+      letter-spacing: .14em;
+      white-space: nowrap;
+    }
+
+    audio {
+      grid-column: 1 / -1;
+      width: 100%;
+      height: 38px;
+      margin-top: 3px;
+      accent-color: var(--red);
+    }
+
+    .links {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      font-size: 13px;
+      letter-spacing: .08em;
+    }
+
+    .links a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      padding: 6px 0 3px;
+    }
+
+    .links a:hover { border-bottom-color: var(--red); }
+
+    @media (max-width: 560px) {
+      main { width: min(100% - 28px, 920px); }
+      .demo { gap: 9px 16px; }
+      audio { height: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>yatara live</h1>
+
+    <div class="demo">
+      <div class="title">Boom Bop</div>
+      <div class="tempo">83 BPM</div>
+      <audio controls preload="metadata" src="files/boom-bop-with-bass.mp3" aria-label="Boom Bop"></audio>
+      <div class="links">
+        <a href="files/boom-bop-with-bass.mp3" download>Download MP3</a>
+        <a href="files/boom-bop-chart.pdf" target="_blank" rel="noopener">View chart</a>
+        <a href="files/boom-bop-chart.pdf" download>Download chart</a>
+        <a href="files/boom-bop-sketch.jpg" target="_blank" rel="noopener">View sketch</a>
+        <a href="files/boom-bop-sketch.jpg" download>Download sketch</a>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="title">Japanese Clave 2-3</div>
+      <div class="tempo">136 BPM</div>
+      <audio controls preload="metadata" src="files/nihon-no-clave-136bpm-with-bass.mp3" aria-label="Japanese Clave 2-3"></audio>
+      <div class="links">
+        <a href="files/nihon-no-clave-136bpm-with-bass.mp3" download>Download MP3</a>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="title">Things Changed Too Soon</div>
+      <div class="tempo">90 BPM</div>
+      <audio controls preload="metadata" src="files/things-changed-too-soon-90bpm-with-bass.mp3" aria-label="Things Changed Too Soon"></audio>
+      <div class="links">
+        <a href="files/things-changed-too-soon-90bpm-with-bass.mp3" download>Download MP3</a>
+      </div>
+    </div>
+
+    <div class="demo">
+      <div class="title">Beneath the Surface</div>
+      <div class="tempo">Off Sync</div>
+      <audio controls preload="metadata" src="files/beneath-the-surface.mp3" aria-label="Beneath the Surface"></audio>
+      <div class="links">
+        <a href="files/beneath-the-surface.mp3" download>Download MP3</a>
+        <a href="files/beneath-the-surface-chart.pdf" target="_blank" rel="noopener">View chart</a>
+        <a href="files/beneath-the-surface-chart.pdf" download>Download chart</a>
+      </div>
+    </div>
+
+    <h2>What is YATARA</h2>
+    <div class="video">
+      <video src="files/what-is-yatara.mp4" poster="files/what-is-yatara-poster.webp" width="1080" height="1920" controls playsinline preload="none" aria-label="What is YATARA (video, 73 seconds)"></video>
+    </div>
+  </main>
+  <script>
+    const players = [...document.querySelectorAll('audio')];
+    players.forEach((player) => {
+      player.addEventListener('play', () => {
+        players.forEach((other) => {
+          if (other !== player) other.pause();
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -16,3 +16,8 @@ audio/
 !nobass/
 !nobass/audio/
 !nobass/audio/*.mp3
+
+# Musician page (link-only) carries its own audio.
+!live-536edecd31/
+!live-536edecd31/files/
+!live-536edecd31/files/*.mp3
